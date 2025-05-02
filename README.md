@@ -1,20 +1,31 @@
 # 🍷 Wine Review Analysis and Database Project
 
 This project transforms a dataset of over 120,000 wine reviews from *Wine Enthusiast* magazine into a structured, queryable relational database. It focuses on data normalization, storage, and web-based interaction to uncover insights about the world’s finest wines.
+> Data: [winemag-data-130k-v2.csv](winemag-data-130k-v2.csv)
+    
+    Databases and Advanced Data Techniques Midterm Coursework
+`Data Normalization · SQL Analytics · Web Visualization · Database Design · ETL Pipeline`
+
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
 
 ---
 
 ## 📚 Table of Contents  
-1. [Project Overview](#project-overview)  
-2. [Dataset](#dataset)  
-3. [Data Cleaning](#data-cleaning)  
-4. [Database Design](#database-design)  
-5. [Web Application](#web-application)  
-6. [Tech Stack](#tech-stack)  
-7. [Installation & Setup](#installation-and-setup)  
-8. [Key Learnings](#key-learnings)  
-9. [Future Enhancements](#future-enhancements)  
-10. [Contact](#contact)  
+1. [Project Overview](#project-overview)
+2. [Repository Structure](#repo-struct)
+3. [Dataset](#dataset)  
+4. [Data Cleaning](#data-cleaning)  
+5. [Database Design](#database-design)  
+6. [Web Application](#web-application)  
+7. [Tech Stack](#tech-stack)  
+8. [Installation & Setup](#installation-and-setup)  
+9. [Key Learnings](#key-learnings)  
+10. [Future Enhancements](#future-enhancements)  
+11. [Contact](#contact)  
 
 ---
 
@@ -27,6 +38,40 @@ The goal of this project was to efficiently **store**, **analyze**, and **presen
 - **📊 SQL Analytics** – Writing SQL queries for insight extraction  
 - **🌐 Web App Development** – A simple UI for wine exploration  
 
+---
+
+## 📂 Repository Structure <a id="repo-struct"></a>
+
+    Interactive-Wine-Review-Data-Insights/
+    ├── .gitignore                  
+    ├── README.md                   
+    ├── Coursework_Report.pdf       # Project report documentation
+    ├── winemag_data_normalization.ipynb # Jupyter notebook for data normalization process: Creating scripts, etc. 
+    ├── ERD_images/                 # Entity Relationship Diagram, Relational Schema Images
+    │   
+    ├── data/                       
+    │   └── winemag-records.csv     # CSV file with wine magazine records
+    │
+    └── application/                
+        ├── scripts/                # SQL scripts for database setup and data loading
+        │   ├── setup-database.sql    # Creates wine_reviews database and user
+        │   ├── create-tables.sql     # Defines normalized database schema
+        │   ├── load-dnorm-data.sql   # Loads denormalized data from CSV
+        │   └── ingest-data.sql       # Transforms and loads data into normalized tables
+        │
+        └── web-app/                # Web application for displaying wine data insights
+            ├── app.js                # Express.js application entry point
+            ├── package.json          # Node.js package configuration
+            ├── package-lock.json     # Locked dependencies for consistent installs
+            │
+            └── templates/          # HTML templates for web pages
+                ├── home.html         # Homepage with navigation to different views
+                ├── reviews.html      # Displays highest rated wine reviews
+                ├── varieties.html    # Shows wine varieties statistics
+                ├── countries.html    # Displays highest rated wines by country
+                ├── wineries.html     # Lists top wineries with review statistics
+                └── locations.html    # Shows location statistics by country
+            
 ---
 
 ## 🗃️ Dataset <a id="dataset"></a>
