@@ -1,1 +1,5 @@
 node_modules/
+.ipynb_checkpoints/
+# If adding notebooks folder
+# notebooks/.ipynb_checkpoints/
+.DS_Store
