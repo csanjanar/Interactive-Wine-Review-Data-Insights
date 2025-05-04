@@ -1,18 +1,19 @@
 # 🍷 Wine Review Analysis and Database Project
-
-    Databases and Advanced Data Techniques Midterm Coursework
-This project transforms a dataset of over 120,000 wine reviews from *Wine Enthusiast* magazine into a structured, queryable relational database. It focuses on data normalization, storage, and web-based interaction to uncover insights about the world’s finest wines.
     
-`Data Normalization · SQL Analytics · Web Visualization · Database Design · ETL Pipeline`
-> ![Kaggle](https://img.shields.io/badge/Kaggle-035a7d?style=for-the-badge&logo=kaggle&logoColor=white)
-> 
-> [zynicide/winemag-data-130k-v2.csv](https://www.kaggle.com/datasets/zynicide/wine-reviews)
+    Databases and Advanced Data Techniques Midterm Coursework
 
+`Data Normalization · SQL Analytics · Web Visualization · Database Design · ETL Pipeline`
+
+This project transforms a dataset of over 120,000 wine reviews from *Wine Enthusiast* magazine into a structured, queryable relational database. It focuses on data normalization, storage, and web-based interaction to uncover insights about the world’s finest wines.
+
+[zynicide/wine-reviews/winemag-data-130k-v2.csv](https://www.kaggle.com/datasets/zynicide/wine-reviews)
+> ![Kaggle](https://img.shields.io/badge/Kaggle-035a7d?style=for-the-badge&logo=kaggle&logoColor=white)
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
 
 ---
 
