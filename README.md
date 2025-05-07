@@ -20,15 +20,16 @@ This project transforms a dataset of over 120,000 wine reviews from *Wine Enthus
 ## 📚 Table of Contents  
 1. [Project Overview](#project-overview)
 2. [Repository Structure](#repo-struct)
-3. [Dataset](#dataset)  
-4. [Data Cleaning](#data-cleaning)  
-5. [Database Design](#database-design)  
-6. [Web Application](#web-application)  
-7. [Tech Stack](#tech-stack)  
-8. [Installation & Setup](#installation-and-setup)  
-9. [Key Learnings](#key-learnings)  
-10. [Future Enhancements](#future-enhancements)  
-11. [Contact](#contact)  
+3. [Wine Reviews Application Structure](#folder-struct)
+4. [Dataset](#dataset)  
+5. [Data Cleaning](#data-cleaning)  
+6. [Database Design](#database-design)  
+7. [Web Application](#web-application)  
+8. [Tech Stack](#tech-stack)  
+9. [Installation & Setup](#installation-and-setup)  
+10. [Key Learnings](#key-learnings)  
+11. [Future Enhancements](#future-enhancements)  
+12. [Contact](#contact)  
 
 ---
 
@@ -44,37 +45,43 @@ The goal of this project was to efficiently **store**, **analyze**, and **presen
 ---
 
 ## 📂 Repository Structure <a id="repo-struct"></a>
+```
+Interactive-Wine-Review-Data-Insights/
+├── .gitignore                  
+├── README.md                   
+├── Coursework_Report.pdf            # Project report documentation
+├── winemag_data_normalization.ipynb # Jupyter notebook for data cleaning and normalization process
+├── ERD_images/                      # Entity Relationship Diagram, Relational Schema Images
+└── wine_reviews/                    # Core project files for the wine review analysis system
+```
 
-    Interactive-Wine-Review-Data-Insights/
-    ├── .gitignore                  
-    ├── README.md                   
-    ├── Coursework_Report.pdf       # Project report documentation
-    ├── winemag_data_normalization.ipynb # Jupyter notebook for data normalization process: Creating scripts, etc. 
-    ├── ERD_images/                 # Entity Relationship Diagram, Relational Schema Images
-    │   
-    ├── data/                       
-    │   └── winemag-records.csv     # CSV file with wine magazine records
+## 📁 Wine Reviews Application Structure <a id="folder-struct"></a>
+```
+wine_reviews/
+├── data/
+│   └── winemag-records.csv         # Wine review dataset CSV (extracted from original dataset)
+│
+└── application/                
+    ├── scripts/                    # SQL scripts for database setup and data loading
+    │   ├── setup-database.sql      # Creates wine_reviews database and user
+    │   ├── create-tables.sql       # Defines normalized database schema
+    │   ├── load-dnorm-data.sql     # Loads denormalized data from CSV
+    │   └── ingest-data.sql         # Transforms and loads data into normalized tables
     │
-    └── application/                
-        ├── scripts/                # SQL scripts for database setup and data loading
-        │   ├── setup-database.sql    # Creates wine_reviews database and user
-        │   ├── create-tables.sql     # Defines normalized database schema
-        │   ├── load-dnorm-data.sql   # Loads denormalized data from CSV
-        │   └── ingest-data.sql       # Transforms and loads data into normalized tables
+    └── web-app/                    # Web application for displaying wine data insights
+        ├── app.js                  # Express.js application entry point
+        ├── package.json            # Node.js package configuration
+        ├── package-lock.json       # Locked dependencies for consistent installs
         │
-        └── web-app/                # Web application for displaying wine data insights
-            ├── app.js                # Express.js application entry point
-            ├── package.json          # Node.js package configuration
-            ├── package-lock.json     # Locked dependencies for consistent installs
-            │
-            └── templates/          # HTML templates for web pages
-                ├── home.html         # Homepage with navigation to different views
-                ├── reviews.html      # Displays highest rated wine reviews
-                ├── varieties.html    # Shows wine varieties statistics
-                ├── countries.html    # Displays highest rated wines by country
-                ├── wineries.html     # Lists top wineries with review statistics
-                └── locations.html    # Shows location statistics by country
-            
+        └── templates/              # HTML templates for web pages
+            ├── home.html           # Homepage with navigation to different views
+            ├── reviews.html        # Displays highest rated wine reviews
+            ├── varieties.html      # Shows wine varieties statistics
+            ├── countries.html      # Displays highest rated wines by country
+            ├── wineries.html       # Lists top wineries with review statistics
+            └── locations.html      # Shows location statistics by country
+```
+
 ---
 
 ## 🗃️ Dataset <a id="dataset"></a>
@@ -231,21 +238,71 @@ ORDER BY points DESC;
 | Web App | Node.js, Express, Mustache |
 
 ---
+<details>
+    
+<summary><h2> 🚀 Installation & Setup <a id="installation-and-setup"></a> </h2></summary>
 
-## 🚀 Installation & Setup <a id="installation-and-setup"></a>
+### Prerequisites
+- MySQL installed on your system
+- Node.js and npm installed (for the web application)
+- Git (for cloning the repository)
 
+### 1. Clone the Repository
 ```bash
-# Clone repository
-git clone https://github.com/yourusername/wine-reviews-db.git
-
-# Set up MySQL
-mysql -u root -p < setup-database.sql
-
-# Load and ingest data
-mysql -u wine_user -p < create-tables.sql
-mysql -u wine_user -p < load-dnorm-data.sql
-mysql -u wine_user -p < ingest-data.sql
+git clone https://github.com/csanjanar/wine-reviews-db.git
+cd wine-reviews-db
 ```
+
+### 2. Database Setup
+1. Run the database setup script (creates wine_reviews database and user):
+   ```bash
+   mysql -u root -p < wine_reviews/application/scripts/setup-database.sql
+   ```
+
+2. Create database tables:
+   ```bash
+   mysql -u wine_user -p < wine_reviews/application/scripts/create-tables.sql
+   ```
+
+3. Load denormalized data from CSV:
+   ```bash
+   mysql -u wine_user -p < wine_reviews/application/scripts/load-dnorm-data.sql
+   ```
+
+4. Transform and load data into normalized tables:
+   ```bash
+   mysql -u wine_user -p < wine_reviews/application/scripts/ingest-data.sql
+   ```
+
+### 3. Web Application Setup
+1. Navigate to the web application directory:
+   ```bash
+   cd wine_reviews/application/web-app
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the application:
+   ```bash
+   node app.js
+   ```
+
+4. Access the application in your browser:
+   ```
+   http://localhost:3000
+   ```
+
+#### Important Notes
+- The MySQL user credentials defined in `setup-database.sql` are:
+  - Username: `wine_user`
+  - Password: `wine_password`
+- Make sure ports for MySQL (3306) and the web application (3000) are not in use by other applications
+- If you encounter permission issues with MySQL, you may need to run the commands with sudo (Linux/Mac) or as administrator (Windows)
+
+</details>
 
 ---
 
