@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Varieties</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+    
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+    
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Varieties</h1>
+    <h3>Most commonly occuring Unique Varieties, their Review Counts, and Highest Points per Variety</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Variety Name</th>
+                <th>Variety Count</th>
+                <th>Highest Points</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#data}}
+            <tr>
+                <td>{{variety_name}}</td>
+                <td>{{variety_count}}</td>
+                <td>{{highest_points}}</td>
+            </tr>
+            {{/data}}
+        </tbody>
+    </table>
+
+    <p><a href="/">Go back to Home</a></p>
+</body>
+
+</html>

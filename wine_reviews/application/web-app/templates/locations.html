@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Locations</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Locations Summary</h1>
+    <h3>The number of provinces, wineries and designations within each country</h3>
+    <p>Designations refer to the vineyard within the winery where the grapes that made the wine are from</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Country</th>
+                <th>Number of Provinces</th>
+                <th>Number of Wineries</th>
+                <th>Number of Designations</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#data}}
+            <tr>
+                <td>{{Country}}</td>
+                <td>{{num_provinces}}</td>
+                <td>{{num_wineries}}</td>
+                <td>{{num_designations}}</td>
+            </tr>
+            {{/data}}
+        </tbody>
+    </table>
+
+    <p><a href="/">Go back to Home</a></p>
+</body>
+
+</html>
