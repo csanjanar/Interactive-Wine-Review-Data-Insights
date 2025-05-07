@@ -45,6 +45,7 @@ The goal of this project was to efficiently **store**, **analyze**, and **presen
 ---
 
 ## 📂 Repository Structure <a id="repo-struct"></a>
+
 ```
 Interactive-Wine-Review-Data-Insights/
 ├── .gitignore                  
@@ -57,6 +58,7 @@ Interactive-Wine-Review-Data-Insights/
 <details>
 
 <summary><h3>📁 Wine Reviews Application Structure <a id="folder-struct"></a></h3></summary>
+
 ```
 wine_reviews/
 ├── data/
@@ -82,6 +84,7 @@ wine_reviews/
             ├── wineries.html       # Lists top wineries with review statistics
             └── locations.html      # Shows location statistics by country
 ```
+
 </details>
 
 ---
