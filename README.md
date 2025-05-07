@@ -20,7 +20,7 @@ This project transforms a dataset of over 120,000 wine reviews from *Wine Enthus
 ## 📚 Table of Contents  
 1. [Project Overview](#project-overview)
 2. [Repository Structure](#repo-struct)
-3. [Wine Reviews Application Structure](#folder-struct)
+   - [Wine Reviews Application Structure](#folder-struct)
 4. [Dataset](#dataset)  
 5. [Data Cleaning](#data-cleaning)  
 6. [Database Design](#database-design)  
@@ -54,8 +54,9 @@ Interactive-Wine-Review-Data-Insights/
 ├── ERD_images/                      # Entity Relationship Diagram, Relational Schema Images
 └── wine_reviews/                    # Core project files for the wine review analysis system
 ```
+<details>
 
-## 📁 Wine Reviews Application Structure <a id="folder-struct"></a>
+<summary><h3>📁 Wine Reviews Application Structure <a id="folder-struct"></a></h3></summary>
 ```
 wine_reviews/
 ├── data/
@@ -81,6 +82,7 @@ wine_reviews/
             ├── wineries.html       # Lists top wineries with review statistics
             └── locations.html      # Shows location statistics by country
 ```
+</details>
 
 ---
 
